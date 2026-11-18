@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body { background: #070b12; color: #e8edf5; }
+body { font-feature-settings: "tnum" 1, "cv11" 1; -webkit-font-smoothing: antialiased; }
+.num { font-variant-numeric: tabular-nums; }
+th { text-align: left; }
+::selection { background: #f5b93a55; }
+*:focus-visible { outline: 2px solid #f5b93a; outline-offset: 2px; border-radius: 6px; }
+
+@layer components {
+  .card { @apply rounded-xl border border-ink-700 bg-ink-900; }
+  .card-pad { @apply p-5; }
+  .label { @apply text-[11px] font-semibold uppercase tracking-[0.08em] text-mist-400; }
+  .input { @apply w-full rounded-lg border border-ink-600 bg-ink-850 px-3 py-2 text-sm text-mist-100 placeholder:text-mist-500 focus:border-brand focus:outline-none; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-brand text-ink-950 hover:brightness-110; }
+  .btn-ghost { @apply btn border border-ink-600 text-mist-100 hover:bg-ink-800; }
+  .btn-buy { @apply btn bg-gain text-ink-950 hover:brightness-110; }
+  .btn-sell { @apply btn bg-loss text-white hover:brightness-110; }
+  .btn-danger { @apply btn border border-loss/50 text-loss hover:bg-loss-soft; }
+  .tbl { @apply w-full text-sm; }
+  .tbl th { @apply border-b border-ink-700 px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-mist-400; }
+  .tbl td { @apply border-b border-ink-800 px-3 py-2.5; }
+  .tbl tr:last-child td { @apply border-b-0; }
+  .chip { @apply inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-semibold; }
+}
+
+.md h2 { @apply mt-6 mb-2 text-lg font-semibold text-mist-100; }
+.md h3 { @apply mt-4 mb-1.5 font-semibold text-mist-100; }
+.md p { @apply my-2.5 leading-7 text-mist-300; }
+.md ul { @apply my-2 list-disc space-y-1 pl-5 text-mist-300; }
+.md ol { @apply my-2 list-decimal space-y-1 pl-5 text-mist-300; }
+.md strong { @apply font-semibold text-mist-100; }
+.md em { @apply italic; }
+.md a { @apply text-brand underline underline-offset-2; }
+.md code { @apply rounded bg-ink-800 px-1 py-0.5 font-mono text-[0.9em]; }
+.md blockquote { @apply my-3 border-l-2 border-brand/60 bg-ink-850 px-4 py-2 font-mono text-sm text-mist-100; }
