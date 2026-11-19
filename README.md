@@ -19,7 +19,7 @@ Next.js 15 (React 19, App Router)  ──  /api/v1 route handlers (modular servi
 2. **Import it in Vercel:** *Add New → Project →* select the repo. Vercel detects Next.js automatically.
 3. **Add a Postgres database:** in the project, open *Storage → Create → Neon (Postgres)* and connect it to the project.
    This injects `DATABASE_URL` (pooled) and `DATABASE_URL_UNPOOLED`. Supabase, or any other Postgres, works too: set `DATABASE_URL` yourself.
-   Pick a database region close to `bom1` (Mumbai), such as Mumbai or Singapore.
+   The app runs in `iad1` (Washington, D.C.) to sit next to a Neon `us-east-1` database. If your database is elsewhere, set `regions` in `vercel.json` to the nearest Vercel region, since every page makes several database round-trips.
 4. **Set environment variables** (*Settings → Environment Variables*):
 
    | Variable | Required | Purpose |
